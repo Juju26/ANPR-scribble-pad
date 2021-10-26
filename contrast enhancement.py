@@ -6,7 +6,7 @@ im = Image.open("C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/Anbe car uh/ta
 #image brightness enhancer
 enhancer = ImageEnhance.Contrast(im)
 
-factor = 1.5 #gives original image
+factor = 1 #gives original image
 im_output = enhancer.enhance(factor)
 im_output.save('op.jpeg')
 

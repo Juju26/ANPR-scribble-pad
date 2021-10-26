@@ -5,12 +5,26 @@ import glob
 #filenames='C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/Anbe car uh/bmw white front.png'
 #filenames='C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/Anbe car uh/tata sus.jpeg'
 #filenames='C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/Anbe car uh/blur img.jpeg'
-filenames='C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/Anbe car uh/2cars.jpeg'
+# filenames='C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/Anbe car uh/jpgs'
+# for filename in glob.glob(os.path.join(filenames, '*.jpg')):
+#     with open(os.path.join(filenames, filename),'r') as fi:
+#         res_list=[]
+#         read=easyocr.Reader(['en'])
+#         result=read.readtext(filenames) 
+#         for i in range(len(result)):    
+#             p=[]
+#             p.append(result[i][1])
+#             res_list.append(''.join(i for i in p))
+#             print(res_list)
+#         print('hi')
 
-with open(filenames,'r') as fi:
+path = 'C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/jpgs'
+for filename in glob.glob(os.path.join(path, '*.jpg')):
+   with open(os.path.join(path, filename), 'r') as f:
+    #img_pa='C:/Users/Asus/OneDrive/Desktop/juju/smrt goggles/codes/using web cam/download.png' 
     res_list=[]
     read=easyocr.Reader(['en'])
-    result=read.readtext(filenames)
+    result=read.readtext(filename)
     for i in range(len(result)):    
         p=[]
         p.append(result[i][1])
