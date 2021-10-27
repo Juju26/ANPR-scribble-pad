@@ -49,8 +49,11 @@ def ocr(filenames):
             res_list.append(''.join(i for i in p))   
     return res_list
 
-def filters():
-    return
+def filters(image):
+    img=cv2.imread(image)
+    medi=cv2.medianBlur(img,5)
+    medi_op=cv2.resize(medi,(540,600))
+    cv2.imshow("median blur",medi_op)
 
 def file_writer():
     return 
@@ -60,10 +63,13 @@ if __name__=="__main__":
     in_im=cv2.imread(path)
     in_im_dis=cv2.resize(in_im,(540,600))
     cv2.imshow('original',in_im_dis)
+    
     con_img=contrast_enhancement(path)
     sha_img=sharpness_enhancement(con_img)
-    ocr_op=ocr(sha_img)
-    print(ocr_op)
+    # ocr_op=ocr(sha_img)
+    # print(ocr_op)
+    filters(sha_img)
+    cv2.waitKey(7200)
    
 
     
