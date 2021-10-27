@@ -18,13 +18,13 @@ import glob
 #             print(res_list)
 #         print('hi')
 
-path = 'C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/jpgs'
-for filename in glob.glob(os.path.join(path, '*.jpg')):
-   with open(os.path.join(path, filename), 'r') as f:
-    #img_pa='C:/Users/Asus/OneDrive/Desktop/juju/smrt goggles/codes/using web cam/download.png' 
+path = 'C:/Users/Asus/OneDrive/Desktop/ANPR scribble pad/13 i .png'
+#for filename in glob.glob(os.path.join(path, '*.jpg')):
+with open(path, 'r') as f:
+#img_pa='C:/Users/Asus/OneDrive/Desktop/juju/smrt goggles/codes/using web cam/download.png' 
     res_list=[]
     read=easyocr.Reader(['en'])
-    result=read.readtext(filename)
+    result=read.readtext(path)
     for i in range(len(result)):    
         p=[]
         p.append(result[i][1])
